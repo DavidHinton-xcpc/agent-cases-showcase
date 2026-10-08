@@ -18,12 +18,23 @@ body { display: flex; flex-direction: column; font-family: "Segoe UI","PingFang 
 #crumb { margin-left: auto; font-size: 11.5px; color: #8d99b3; max-width: 42vw; overflow: hidden;
   text-overflow: ellipsis; white-space: nowrap; direction: rtl; text-align: left; }
 #vf { flex: 1; width: 100%; border: 0; background: #fff; }
-@media (max-width: 700px){ #crumb { display: none; } #bar select { max-width: 200px; } }
+#selAll { display: none; }
+@media (max-width: 700px) {
+  #bar { flex-wrap: nowrap; gap: 6px; padding: 5px 10px; }
+  #bar .brand { font-size: 12.5px; }
+  #bar .brand small { display: none; }
+  #bar button { font-size: 12px; padding: 3px 9px; white-space: nowrap; }
+  .selTriple select { display: none; }
+  #selAll { display: block; flex: 1 1 auto; min-width: 0; width: auto; font-size: 13px;
+    padding: 5px 8px; text-overflow: ellipsis; }
+  #crumb { display: none; }
+}
 </style></head>
 <body>
 <header id="bar">
   <span class="brand">W01 案例展示<small>单文件 · 离线可开</small></span>
-  <button onclick="SCS_NAV('index.html')">案例总览</button>
+  <button onclick="SCS_NAV('index.html')">总览</button>
+  <span class="selTriple">
   <select id="selCase" onchange="if(this.value)SCS_NAV(this.value)"><option value="">案例 ▾</option>
 <option value="cases/index.html">案例总览</option>
 <option value="cases/case1.html">案例 1 · 案例 1 · 一句话把一周的听说材料备齐</option>
@@ -84,6 +95,65 @@ body { display: flex; flex-direction: column; font-family: "Segoe UI","PingFang 
 <option value="view/week01__materials__cards__W1-A_listener.md.html">week01 / materials / cards / W1-A_listener.md</option>
 <option value="view/week01__materials__dialogue_cards_W01_TEM4.md.html">week01 / materials / dialogue_cards_W01_TEM4.md</option>
 <option value="view/week01__materials__scripts__6ME_221124_art_of_conversation.txt.html">week01 / materials / scripts / 6ME_221124_art_of_conversation.txt</option></select>
+  </span>
+  <select id="selAll" onchange="if(this.value)SCS_NAV(this.value)"><option value="">全部页面 ▾</option>
+<option value="cases/case1.html">案例 1 · 案例 1 · 一句话把一周的听说材料备齐</option>
+<option value="cases/case2.html">案例 2 · 案例 2 · 「我快做完了」→ 交前缺口检查 + 目录长期重组</option>
+<option value="cases/case3.html">案例 3 · 案例 3 · 先审计、再批改：把听写批改 skill 修到能按 Assignme</option>
+<option value="cases/case4.html">案例 4 · 案例 4 · 学生主导迭代报告设计：极简、专业化、「不提醒、只就事论事」</option>
+<option value="cases/case5.html">案例 5 · 案例 5 · 复述/视听说评估流水线：Agent 像实验室工程师一样自诊断、自修</option>
+<option value="cases/case6.html">案例 6 · 案例 6 · 对话批改：双模型交叉验证 + 学生纠偏后诚实重跑</option>
+<option value="cases/case7.html">案例 7 · 案例 7 · 提交打包 + 逐项预审 + 学生一句话定调「中立差异说明」</option>
+<option value="index.html">案例总览</option>
+<option value="sessions.html">全部会话</option>
+<option value="2026-09-19T01-59-58-789Z_01a0b764-4c43-76ae-bc19-9766ba163c12.html">π session 01a0b764-4c43-76 · Week 1 · The Ar</option>
+<option value="2026-09-19T13-52-01-750Z_01a0b9f0-32d5-75a0-b943-f020032aa800.html">π session 01a0b9f0-32d5-75 · e</option>
+<option value="2026-09-19T13-52-12-379Z_01a0b9f0-5c5a-75a0-b943-f022c2260257.html">π session 01a0b9f0-5c5a-75 · I finish this w</option>
+<option value="2026-09-19T14-08-02-312Z_01a0b9fe-db05-733e-845e-be546e5d1023.html">π session 01a0b9fe-db05-73 · E:\computationa</option>
+<option value="2026-09-20T01-39-48-147Z_01a0bc78-2f32-7544-b8d1-ccb09fcbcf95.html">π session 01a0bc78-2f32-75 · 当前pi的skill出现con</option>
+<option value="2026-09-20T01-47-40-185Z_01a0bc7f-6318-7554-8473-7bbc333491ef.html">π session 01a0bc7f-6318-75 · E:\computationa</option>
+<option value="2026-09-20T01-52-46-072Z_01a0bc84-0df8-7544-b8d1-ccb3a0dfbbab.html">π session 01a0bc84-0df8-75 · 针对当前的retelling要</option>
+<option value="2026-09-20T05-11-08-405Z_01a0bd39-ab74-7594-896c-a4a8a74462c3.html">π session 01a0bd39-ab74-75 · 请你看下最近几次session</option>
+<option value="2026-09-20T05-34-22-707Z_01a0bd4e-f1f3-7594-896c-a4aa03274635.html">π session 01a0bd4e-f1f3-75 · E:\computationa</option>
+<option value="2026-09-20T08-16-55-908Z_01a0bde3-c463-7594-896c-a4ad2dbe74c2.html">π session 01a0bde3-c463-75 · E:\computationa</option>
+<option value="view/.pi__skills__tem4-dictation-grading__CHANGELOG.md.html">文档 · .pi / skills / tem4-dictation-grading / CHANGELOG.md</option>
+<option value="view/.pi__skills__tem4-dictation-grading__SKILL.md.html">文档 · .pi / skills / tem4-dictation-grading / SKILL.md</option>
+<option value="view/.pi__skills__tem4-dictation-grading__references__example-report.md.html">文档 · .pi / skills / tem4-dictation-grading / references / example-report.md</option>
+<option value="view/MANIFEST.md.html">文档 · MANIFEST.md</option>
+<option value="view/_tools__README.md.html">文档 · _tools / README.md</option>
+<option value="view/lib__weekkit__prompts__comment_eval.md.html">文档 · lib / weekkit / prompts / comment_eval.md</option>
+<option value="view/lib__weekkit__prompts__visual_eval.md.html">文档 · lib / weekkit / prompts / visual_eval.md</option>
+<option value="view/session__2026-09-19T01-59-58-789Z_01a0b764-4c43-76ae-bc19-9766ba163c12.jsonl.html">文档 · session / 2026-09-19T01-59-58-789Z_01a0b764-4c43-76ae-bc19-9766ba163c12.jsonl</option>
+<option value="view/session__2026-09-19T13-52-01-750Z_01a0b9f0-32d5-75a0-b943-f020032aa800.jsonl.html">文档 · session / 2026-09-19T13-52-01-750Z_01a0b9f0-32d5-75a0-b943-f020032aa800.jsonl</option>
+<option value="view/session__2026-09-19T13-52-12-379Z_01a0b9f0-5c5a-75a0-b943-f022c2260257.jsonl.html">文档 · session / 2026-09-19T13-52-12-379Z_01a0b9f0-5c5a-75a0-b943-f022c2260257.jsonl</option>
+<option value="view/session__2026-09-19T14-08-02-312Z_01a0b9fe-db05-733e-845e-be546e5d1023.jsonl.html">文档 · session / 2026-09-19T14-08-02-312Z_01a0b9fe-db05-733e-845e-be546e5d1023.jsonl</option>
+<option value="view/session__2026-09-20T01-39-48-147Z_01a0bc78-2f32-7544-b8d1-ccb09fcbcf95.jsonl.html">文档 · session / 2026-09-20T01-39-48-147Z_01a0bc78-2f32-7544-b8d1-ccb09fcbcf95.jsonl</option>
+<option value="view/session__2026-09-20T01-47-40-185Z_01a0bc7f-6318-7554-8473-7bbc333491ef.jsonl.html">文档 · session / 2026-09-20T01-47-40-185Z_01a0bc7f-6318-7554-8473-7bbc333491ef.jsonl</option>
+<option value="view/session__2026-09-20T01-52-46-072Z_01a0bc84-0df8-7544-b8d1-ccb3a0dfbbab.jsonl.html">文档 · session / 2026-09-20T01-52-46-072Z_01a0bc84-0df8-7544-b8d1-ccb3a0dfbbab.jsonl</option>
+<option value="view/session__2026-09-20T05-11-08-405Z_01a0bd39-ab74-7594-896c-a4a8a74462c3.jsonl.html">文档 · session / 2026-09-20T05-11-08-405Z_01a0bd39-ab74-7594-896c-a4a8a74462c3.jsonl</option>
+<option value="view/session__2026-09-20T05-34-22-707Z_01a0bd4e-f1f3-7594-896c-a4aa03274635.jsonl.html">文档 · session / 2026-09-20T05-34-22-707Z_01a0bd4e-f1f3-7594-896c-a4aa03274635.jsonl</option>
+<option value="view/session__2026-09-20T08-16-55-908Z_01a0bde3-c463-7594-896c-a4ad2dbe74c2.jsonl.html">文档 · session / 2026-09-20T08-16-55-908Z_01a0bde3-c463-7594-896c-a4ad2dbe74c2.jsonl</option>
+<option value="view/session__典型案例_agent辅助作业.md.html">文档 · session / 典型案例_agent辅助作业.md</option>
+<option value="view/week01__01_dictation__w1_dictation_1_answer.md.html">文档 · week01 / 01_dictation / w1_dictation_1_answer.md</option>
+<option value="view/week01__01_dictation__w1_dictation_2_answer.md.html">文档 · week01 / 01_dictation / w1_dictation_2_answer.md</option>
+<option value="view/week01__02_retelling__w1_comment_verdict.json.html">文档 · week01 / 02_retelling / w1_comment_verdict.json</option>
+<option value="view/week01__02_retelling__w1_retelling_retelling_Detailed_Analysis_Report.md.html">文档 · week01 / 02_retelling / w1_retelling_retelling_Detailed_Analysis_Report.md</option>
+<option value="view/week01__03_visual_retelling__w1_retell_gate.json.html">文档 · week01 / 03_visual_retelling / w1_retell_gate.json</option>
+<option value="view/week01__03_visual_retelling__w1_visual-retelling_retelling_Detailed_Analysis_Report.md.html">文档 · week01 / 03_visual_retelling / w1_visual-retelling_retelling_Detailed_Analysis_Report.md</option>
+<option value="view/week01__03_visual_retelling__w1_visual_verdict.json.html">文档 · week01 / 03_visual_retelling / w1_visual_verdict.json</option>
+<option value="view/week01__04_shadowing__w1_shadow_self_eval.md.html">文档 · week01 / 04_shadowing / w1_shadow_self_eval.md</option>
+<option value="view/week01__05_dialogue__w1_dialogue_E2_full_report.md.html">文档 · week01 / 05_dialogue / w1_dialogue_E2_full_report.md</option>
+<option value="view/week01__05_dialogue__w1_dialogue_highlights.md.html">文档 · week01 / 05_dialogue / w1_dialogue_highlights.md</option>
+<option value="view/week01__05_dialogue__w1_dialogue_report.md.html">文档 · week01 / 05_dialogue / w1_dialogue_report.md</option>
+<option value="view/week01__05_dialogue__w1_dialogue_scores.json.html">文档 · week01 / 05_dialogue / w1_dialogue_scores.json</option>
+<option value="view/week01__05_dialogue__w1_dialogue_transcript.md.html">文档 · week01 / 05_dialogue / w1_dialogue_transcript.md</option>
+<option value="view/week01__06_weekly_review__w1_weekly_review.md.html">文档 · week01 / 06_weekly_review / w1_weekly_review.md</option>
+<option value="view/week01__README.md.html">文档 · week01 / README.md</option>
+<option value="view/week01__W01_状态与Assignment差异说明.md.html">文档 · week01 / W01_状态与Assignment差异说明.md</option>
+<option value="view/week01__materials__Week1_材料清单_有稿版.md.html">文档 · week01 / materials / Week1_材料清单_有稿版.md</option>
+<option value="view/week01__materials__cards__W1-A_listener.md.html">文档 · week01 / materials / cards / W1-A_listener.md</option>
+<option value="view/week01__materials__dialogue_cards_W01_TEM4.md.html">文档 · week01 / materials / dialogue_cards_W01_TEM4.md</option>
+<option value="view/week01__materials__scripts__6ME_221124_art_of_conversation.txt.html">文档 · week01 / materials / scripts / 6ME_221124_art_of_conversation.txt</option></select>
   <span id="crumb"></span>
 </header>
 <iframe id="vf" title="showcase"></iframe>
@@ -126,7 +196,7 @@ function srcdocFor(k){
   return '<!doctype html><html><head><meta charset="utf-8"></head><body style="font:14px system-ui;padding:40px"><h2>未找到页面：'+esc(k)+'</h2></body></html>';
 }
 function setSel(k){
-  ["selCase","selSess","selDoc"].forEach(function(id){
+  ["selCase","selSess","selDoc","selAll"].forEach(function(id){
     var el = document.getElementById(id);
     if ([].some.call(el.options, function(o){ return o.value === k; })) el.value = k;
     else el.selectedIndex = 0;
